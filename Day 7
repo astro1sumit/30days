@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args){
+	    Scanner sc=new Scanner(System.in);
+	    String str1=sc.next();
+	    String str2=sc.next();
+	    int count=0;
+	        for(int j=0;j<str1.length();j++){
+	            if(str1.charAt(j)==str2.charAt(j)){
+	                count++;
+	                }
+	            else{
+	                break;
+	            }
+	            if(count==str1.length()){
+	                System.out.println("yes");
+	                }
+	            else{
+	                System.out.println("no");
+	            }
+	            }
+	}
+}
