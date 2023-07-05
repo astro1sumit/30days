@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+     public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        
+        System.out.println(maxiconsecutivesubarray(arr , n));
+    }
+    static int maxiconsecutivesubarray(int arr[] , int n)
+    {
+        int maxi=0;
+        for (int i=0; i<n; i++) {
+            int count=1;
+            for(int j=i;j<n-1;j++){
+                if(arr[j+1]==arr[j]+1){
+                    count++;
+                }
+                else{
+                    break;
+                }
+            }
+            maxi=Math.max(maxi,count);
+        }
+ 
+        return maxi;
+    }
+}
