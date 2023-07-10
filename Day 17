@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		System.out.println(isValid(s));
+    }
+    
+    public static boolean isValid(String s) {
+        char[] arrays=s.toCharArray();
+        int kum=0;
+        for(int i=1; i<arrays.length; i++)
+            if(kum >= 0 && (arrays[i]-1 == arrays[kum] || arrays[i]-2 == arrays[kum]))
+                kum--;
+            else arrays[++kum] = arrays[i];
+        return kum==-1;
+    } 
+    
+    
+}
+
