@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str1 = sc.next();
+		String str2 = sc.next();
+		if(str1.length() == str2.length())
+		{
+		    int arr1[] = new int[256];
+		    int arr2[] = new int[256];
+		    
+		    for(int i=0;i<str1.length();i++)
+		    {
+		        char p = str1.charAt(i);
+		        char q = str2.charAt(i);
+		        if (arr1[p]==arr2[q])
+		        {
+		            arr1[p] = i+1;
+		            arr2[q] = i+1;
+		        }
+		        else
+		        {
+		            System.out.print("false");
+		            break;
+		        }
+		    }
+		    System.out.print("true");
+		}
+		else
+		{
+		    System.out.print("false");
+		}
+	}
+}
