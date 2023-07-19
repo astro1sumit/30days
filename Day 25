@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		int i = 0, j = str.length() - 1;
+        while (i < j) {
+            if (!Character.isLetterOrDigit(str.charAt(i))) 
+            {
+                ++i;
+            } else if (!Character.isLetterOrDigit(str.charAt(j))) 
+            {
+                --j;
+            } else if (Character.toLowerCase(str.charAt(i)) != Character.toLowerCase(str.charAt(j))) 
+            {
+                System.out.print("false");
+                System.exit(0);
+            } else {
+                ++i;
+                --j;
+            }
+        }
+        System.out.print("true");
+	}
+}
