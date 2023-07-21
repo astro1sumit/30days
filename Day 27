@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int r = num;  
+        while(r>9){  
+            r = happynum(r);  
+        }  
+        if(r == 1)  
+            System.out.println("True");  
+        else  
+            System.out.println("False");   
+        
+	}
+	public static int happynum(int num)
+	{
+	    int rem = 0, sum = 0;
+	    while(num > 0){  
+            rem = num%10;  
+            sum = sum + (rem*rem);  
+            num = num/10;  
+        }  
+        return sum; 
+	}
+}
